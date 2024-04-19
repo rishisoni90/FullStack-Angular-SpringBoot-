@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333; /* Link text color */
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #ddd; /* Link background color */
+  }
+  
+  nav a:hover {
+    background-color: #ccc; /* Hover background color */
+  }
