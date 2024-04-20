@@ -37,7 +37,10 @@ public class ServiceImp implements CustomerService {
     @Override
     public void deleteCustomer(Long id)
     {
-        customerRepo.deleteById(id);
+        
+            customerRepo.deleteById(id);
+        
+       
     }
     
     @Override

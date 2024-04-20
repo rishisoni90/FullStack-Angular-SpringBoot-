@@ -63,6 +63,10 @@ public class Controllers {
         return customer;
     }
 
+    /**
+     * @param request
+     * @return
+     */
     @DeleteMapping("/deleteCustomer")
     public ResponseEntity<String> deleteCustomer(@RequestBody Map<String,Long> request)
     {   
@@ -75,7 +79,11 @@ public class Controllers {
             return   new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
+    
+        
         customerService.deleteCustomer(request.get("id"));
+
+       
         return   ResponseEntity.ok("Customer id: "+ tempId +" Deleted");
     }
     
