@@ -1,0 +1,52 @@
+<nav>
+    <a routerLink="">Main Page</a>
+</nav>
+
+<h1>ADD Customer</h1>
+
+
+<button class="red-button" (click)="onClickSave()" >Save</button>
+
+
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text"  [(ngModel)]="customer1.id" placeholder="Enter ID"></td>
+        <td><input type="text"  [(ngModel)]="customer1.name" placeholder="Enter Name"></td>
+        <td><input type="text"  [(ngModel)]="customer1.email" placeholder="Enter Email"></td>
+        <td><input type="text"  [(ngModel)]="customer1.phoneNumber"  placeholder="Enter Phone Number"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2> Existing Records !!!!!!</h2>
+  <table>
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        <tr *ngFor="let customer of customerDetails">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.phoneNumber}}</td>
+        </tr>
+    </tbody>
+</table>
+
+  

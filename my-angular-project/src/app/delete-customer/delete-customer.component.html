@@ -1,0 +1,31 @@
+<nav>
+    <a routerLink="">Main Page</a>
+</nav>
+
+<h1>Delete Customer</h1>
+
+<input class="rectangle" type="text" placeholder="Enter Id" style="margin: 20px auto; display: block;" [(ngModel)]="enteredId">
+
+<button class="red-button" (click)="onClick()" >Delete</button>
+<table>
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        <tr *ngFor="let customer of customerdetail">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.phoneNumber}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
