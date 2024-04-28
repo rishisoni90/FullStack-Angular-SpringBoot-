@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.basic.BasicProject.Entity.Customer;
 import com.basic.BasicProject.Service.CustomerService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -29,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 public class Controllers {
    
     @Autowired
@@ -45,14 +47,21 @@ public class Controllers {
      * @param customerRequest
      * @return
      */
-    @PutMapping("/saveCustomer")
-    public ResponseEntity<Customer> postMethodName(@RequestBody Customer customerRequest) {
-        //TODO: process POST request
-        
-        Customer customer =  customerService.saveCustomer(customerRequest);
-        
-        return new ResponseEntity<>(customer, HttpStatus.CREATED);
+    @PostMapping("/saveCustomer")
+public ResponseEntity<Customer> saveCustomer(@RequestBody String customerRequestJson) {
+    ObjectMapper objectMapper = new ObjectMapper(); // ObjectMapper from Jackson library
+    try {
+        Customer customerRequest = objectMapper.readValue(customerRequestJson, Customer.class);
+        // process the customerRequest as needed
+        Customer savedCustomer = customerService.saveCustomer(customerRequest);
+        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
+    } catch (JsonProcessingException e) {
+        // Handle JSON parsing exception
+        e.printStackTrace();
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+}
+
 
     @GetMapping("/retrieveCustomerInfo")
     public List<Customer> postMethodName() {

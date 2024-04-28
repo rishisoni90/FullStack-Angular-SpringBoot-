@@ -28,7 +28,7 @@ export class Customerservice {
       
 
       addCustomerInfo(customer: Customer): Observable<any> {
-        return this.http.put<any>(`${this.addUrl}`, customer);
+        return this.http.post<any>(`${this.addUrl}`, customer);
       }
       
       
