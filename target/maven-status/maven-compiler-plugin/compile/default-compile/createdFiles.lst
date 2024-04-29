@@ -1,0 +1,7 @@
+com\basic\BasicProject\Entity\Customer.class
+com\basic\BasicProject\CorsConfig.class
+com\basic\BasicProject\Controllers\Controllers.class
+com\basic\BasicProject\Repository\CustomerRepo.class
+com\basic\BasicProject\BasicProjectApplication.class
+com\basic\BasicProject\ServiceImp\ServiceImp.class
+com\basic\BasicProject\Service\CustomerService.class

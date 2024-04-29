@@ -8,11 +8,11 @@ import { Customer } from "./customer";
 })
 export class Customerservice {
 
-    private baseUrl = "http://localhost:8080/customer/retrieveCustomerInfo";
+    private baseUrl = "http://sample-env.eba-nr8awqv9.us-east-2.elasticbeanstalk.com/customer/retrieveCustomerInfo";
 
-    private deleteUrl = "http://localhost:8080/customer/deleteCustomer";
+    private deleteUrl = "http://sample-env.eba-nr8awqv9.us-east-2.elasticbeanstalk.com/customer/deleteCustomer";
 
-    private addUrl = "http://localhost:8080/customer/saveCustomer";
+    private addUrl = "http://sample-env.eba-nr8awqv9.us-east-2.elasticbeanstalk.com/customer/saveCustomer";
 
     constructor(private http: HttpClient) {}
 

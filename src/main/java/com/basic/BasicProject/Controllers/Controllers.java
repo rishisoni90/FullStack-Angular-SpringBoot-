@@ -24,14 +24,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin(origins = "http://127.0.0.1:5500/")
+@CrossOrigin(origins = "*") 
 public class Controllers {
    
     @Autowired
